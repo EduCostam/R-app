@@ -41,7 +41,27 @@ export function Routes() {
           },
         }}
       ></tab.Screen>
-      <tab.Screen name="Favorites" component={Favorites}></tab.Screen>
+      <tab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => {
+            if (focused) {
+              return (
+                <Ionicons name="heart" color="#FF4141" size={size}></Ionicons>
+              );
+            }
+
+            return (
+              <Ionicons
+                name="heart-outline"
+                color={color}
+                size={size}
+              ></Ionicons>
+            );
+          },
+        }}
+      ></tab.Screen>
     </tab.Navigator>
   );
 }
