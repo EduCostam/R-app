@@ -6,6 +6,9 @@ export function Home() {
   return (
     <SafeAreaView style={styles.container}>
       <Logo></Logo>
+
+      <Text>Encontre a receita</Text>
+      <Text>que combina com você</Text>
     </SafeAreaView>
   );
 }
