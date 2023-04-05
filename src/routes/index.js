@@ -13,9 +13,20 @@ export function Routes() {
         tabBarHideOnKeyboard: true,
         tabBarShowLabel: false,
         tabBarActiveTintColor: "#121212",
+
+        tabBarStyle: {
+          backgroundColor: "#FFF",
+          borderTopWidth: 0,
+        },
       }}
     >
-      <tab.Screen name="HomeTab" component={Home}></tab.Screen>
+      <tab.Screen
+        name="HomeTab"
+        component={Home}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => {},
+        }}
+      ></tab.Screen>
       <tab.Screen name="Favorites" component={Favorites}></tab.Screen>
     </tab.Navigator>
   );
