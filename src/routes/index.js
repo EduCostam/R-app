@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home } from "../pages/home";
 import { Favorites } from "../pages/favorites";
 
+import { Ionicons } from "@expo/vector-icons";
+
 const tab = createBottomTabNavigator();
 
 export function Routes() {
@@ -24,7 +26,19 @@ export function Routes() {
         name="HomeTab"
         component={Home}
         options={{
-          tabBarIcon: ({ color, size, focused }) => {},
+          tabBarIcon: ({ color, size, focused }) => {
+            if (focused) {
+              return <Ionicons name="home" color="#000" size={size}></Ionicons>;
+            }
+
+            return (
+              <Ionicons
+                name="home-outline"
+                color={color}
+                size={size}
+              ></Ionicons>
+            );
+          },
         }}
       ></tab.Screen>
       <tab.Screen name="Favorites" component={Favorites}></tab.Screen>
