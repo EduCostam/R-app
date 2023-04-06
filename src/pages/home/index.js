@@ -27,6 +27,7 @@ export function Home() {
         <TextInput
           placeholder="Digite o nome da comida..."
           style={styles.input}
+          value={inputValue}
         ></TextInput>
 
         <TouchableOpacity onPress={handleSearch}>
