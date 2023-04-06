@@ -14,7 +14,8 @@ export function Home() {
   const [inputValue, setInputValue] = useState("");
 
   function handleSearch() {
-    console.log("VOCE CLICOU NESSE BOTAO");
+    console.log("Você digitou:");
+    console.log(inputValue);
   }
 
   return (
@@ -28,6 +29,7 @@ export function Home() {
           placeholder="Digite o nome da comida..."
           style={styles.input}
           value={inputValue}
+          onChangeText={(text) => setInputValue(text)}
         ></TextInput>
 
         <TouchableOpacity onPress={handleSearch}>
